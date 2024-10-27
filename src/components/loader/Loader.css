@@ -1,0 +1,43 @@
+/* src/components/Loader.css */
+@keyframes line-load {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.animate-line-load {
+    animation: line-load 1.5s linear infinite;
+}
+
+
+
+
+
+/* Additional shadow for the loading line */
+.shadow-lg {
+    box-shadow: 
+        0 0 15px rgba(100, 149, 237, 0.7),   /* Steel blue */
+        0 0 30px rgba(100, 149, 237, 0.4);   /* Softer steel blue */
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .relative {
+        width: 80%; /* Adjust width for smaller screens */
+    }
+
+    .glow-top {
+        top: -8px; /* Adjust position for smaller screens */
+    }
+}

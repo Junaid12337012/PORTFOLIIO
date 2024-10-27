@@ -1,0 +1,64 @@
+/* src/components/PortfolioTitle/PortfolioTitle.css */
+.portfolio-title-container {
+    background-color: black; 
+    width: 100vw; 
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+.portfolio-title {
+    color: white; 
+    font-size: 6rem; 
+    font-weight: bold; 
+    white-space: nowrap; 
+    position: relative; 
+    animation-duration: 1s; 
+}
+
+.port {
+    transform: translateX(-100%); 
+    animation-name: slide-in-left;
+    animation-fill-mode: forwards; 
+}
+
+/* Slide-in animation for FOLIO */
+.folio {
+    transform: translateX(100%); 
+    animation-name: slide-in-right; 
+    animation-fill-mode: forwards;
+}
+
+/* Slide-in animations */
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%); 
+    }
+    100% {
+        transform: translateX(0); 
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(100%); 
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-title {
+        font-size: 4rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-title {
+        font-size: 3rem; 
+    }
+}
