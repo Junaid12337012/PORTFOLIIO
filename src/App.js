@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Loader from './components/loader/Loader';
-import Main from './components/Main';
-import PortfolioTitle from './components/PortfolioTitle/PortfolioTitle'; // Adjust the path if necessary
+import Loader from './components/startup/loader/Loader';
+import PortfolioTitle from './components/startup/PortfolioTitle/PortfolioTitle'; // Adjust the path if necessary
 import './App.css'; // Add styles for transitions
+import Home from './components/pages/Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -35,7 +37,16 @@ function App() {
                             <PortfolioTitle />
                         </div>
                     )}
-                    {!titleVisible && <Main />}
+                    {!titleVisible 
+                    && 
+                    <Router>
+            <Navbar />
+            <div className="pt-20">
+                <Routes>
+                    <Route path="/" element={<Home/>} />
+                </Routes>
+            </div>
+        </Router>}
                 </>
             )}
         </div>

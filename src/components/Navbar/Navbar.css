@@ -1,0 +1,108 @@
+/* src/styles/Navbar.css */
+
+:root {
+    --primary-color: #3b82f6;
+    --bg-color: #000;
+    --menu-item-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.8);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--bg-color);
+    color: var(--menu-item-color);
+    z-index: 10;
+    transition: background 0.4s, box-shadow 0.4s;
+}
+
+.navbar-scrolled {
+    background: var(--bg-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-logo .logo-text {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-item {
+    font-size: 1rem;
+    position: relative;
+    color: var(--menu-item-color);
+    transition: color 0.3s;
+}
+
+.navbar-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.navbar-item:hover {
+    color: var(--primary-color);
+}
+
+.navbar-item:hover::after {
+    width: 100%;
+}
+
+.navbar-item-active {
+    color: var(--primary-color);
+}
+
+.navbar-toggle .toggle-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--menu-item-color);
+}
+
+.navbar-mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.mobile-item {
+    font-size: 1.5rem;
+    color: var(--menu-item-color);
+    transition: color 0.3s;
+}
+
+.mobile-item:hover {
+    color: var(--primary-color);
+}
